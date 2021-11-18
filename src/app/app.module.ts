@@ -7,11 +7,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { ButtonComponent } from './button/button.component';
+import { ChooseRandomFoodComponent } from './choose-random-food/choose-random-food.component';
+import { SelectFoodByProductComponent } from './select-food-by-product/select-food-by-product.component';
+import { AddNewFoodComponent } from './add-new-food/add-new-food.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ButtonComponent,
+    ChooseRandomFoodComponent,
+    SelectFoodByProductComponent,
+    AddNewFoodComponent
   ],
   imports: [
     BrowserModule,
