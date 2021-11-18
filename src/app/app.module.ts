@@ -11,6 +11,12 @@ import { ButtonComponent } from './button/button.component';
 import { ChooseRandomFoodComponent } from './choose-random-food/choose-random-food.component';
 import { SelectFoodByProductComponent } from './select-food-by-product/select-food-by-product.component';
 import { AddNewFoodComponent } from './add-new-food/add-new-food.component';
+import { ViewFoodComponent } from './view-food/view-food.component';
+import { HolderComponent } from './holder/holder.component';
+import {MatTableModule} from '@angular/material/table';
+import {CdkTableModule} from '@angular/cdk/table';
+import { ClarityModule } from '@clr/angular';
+
 
 
 @NgModule({
@@ -19,7 +25,9 @@ import { AddNewFoodComponent } from './add-new-food/add-new-food.component';
     ButtonComponent,
     ChooseRandomFoodComponent,
     SelectFoodByProductComponent,
-    AddNewFoodComponent
+    AddNewFoodComponent,
+    ViewFoodComponent,
+    HolderComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +35,9 @@ import { AddNewFoodComponent } from './add-new-food/add-new-food.component';
     BrowserAnimationsModule,
     MatSliderModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    ClarityModule
   ],
   providers: [],
   bootstrap: [AppComponent]

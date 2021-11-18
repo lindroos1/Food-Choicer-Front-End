@@ -12,6 +12,7 @@ export class SelectFoodByProductComponent extends ButtonComponent {
   ngOnInit(): void {
   }
 
+  //redirect to new componenet where popup will accept products and send them to spring 
   onClick(){
     console.log("select food by product clicked!");
   }
