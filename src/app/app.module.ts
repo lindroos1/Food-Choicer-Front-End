@@ -16,6 +16,7 @@ import { HolderComponent } from './holder/holder.component';
 import {MatTableModule} from '@angular/material/table';
 import {CdkTableModule} from '@angular/cdk/table';
 import { ClarityModule } from '@clr/angular';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -37,7 +38,8 @@ import { ClarityModule } from '@clr/angular';
     MatButtonModule,
     MatCardModule,
     MatTableModule,
-    ClarityModule
+    ClarityModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

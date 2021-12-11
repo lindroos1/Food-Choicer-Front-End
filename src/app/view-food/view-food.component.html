@@ -6,9 +6,15 @@
     <h1>Food</h1>
   </caption>
   <thead>
+    <th>Products</th>
     <th >Name</th>
-    <th >Products</th>
     </thead>
+    <tbody>
+      <tr *ngFor=" let ingr of food.ingredients;  let idx = index">
+        <td>{{ingr.ingredients}}</td>
+        <td *ngIf="idx == 0">{{food.foodName}}</td>
+      </tr>
+    </tbody>
   
 </table>
 

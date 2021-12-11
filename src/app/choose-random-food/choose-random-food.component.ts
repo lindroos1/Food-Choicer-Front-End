@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { Router } from '@angular/router';
+import { RandomFoodService } from '../random-food.service';
 
 
 @Component({
@@ -10,14 +11,11 @@ import { Router } from '@angular/router';
 })
 export class ChooseRandomFoodComponent extends ButtonComponent {
 
-  
-
   ngOnInit(): void {
   }
 
   //call spring to get random food, send the json to  view food and reddirect its html
   onClick(){
-    console.log("overwritten!");
      this.router.navigate(['viewFood']);
   }
 }
