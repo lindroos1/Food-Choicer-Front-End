@@ -17,6 +17,8 @@ import {MatTableModule} from '@angular/material/table';
 import {CdkTableModule} from '@angular/cdk/table';
 import { ClarityModule } from '@clr/angular';
 import { HttpClientModule } from '@angular/common/http';
+import { IngredientFormComponent } from './ingredient-form/ingredient-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -29,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     AddNewFoodComponent,
     ViewFoodComponent,
     HolderComponent,
+    IngredientFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     ClarityModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

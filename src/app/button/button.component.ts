@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FoodByIngredientsService } from '../food-by-ingredients.service';
+import { RandomFoodService } from '../random-food.service';
 
 @Component({
   selector: 'app-button',
@@ -12,7 +15,12 @@ button parent - has the behaviour for any button
 */
 export class ButtonComponent implements OnInit {
 
-  constructor(protected router: Router) { }
+ //protected clicked:boolean = false;
+
+
+  constructor(protected formBuilder: FormBuilder, protected router: Router,
+     protected randomFoodService:RandomFoodService,
+     protected foodbyIngrServ:FoodByIngredientsService) { }
 
 
   ngOnInit(): void {
@@ -21,5 +29,6 @@ export class ButtonComponent implements OnInit {
   onClick(): void{
       console.log("clicked");
   }
+
 
 }

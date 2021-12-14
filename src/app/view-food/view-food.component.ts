@@ -15,13 +15,16 @@ export class ViewFoodComponent implements OnInit {
   food!: Food;
 
 
+  /*
   ngOnInit(): void {
       this.randomFoodService.get().subscribe( data =>{
         this.food = data;
         console.log(this.food.foodName);
       });
   }
+ */
 
+  ngOnInit(): void {}
   back():void{
       this.router.navigate(['buttons']);
   }

@@ -3,3 +3,23 @@
     height: 70px">
         <button type="button" mat-flat-button  (click)="onClick()">select food by products</button>
     </div>
+
+
+<div *ngIf = "clicked == true">
+    <form  [formGroup] = "formGroup" (ngSubmit)="searchFood()">
+        <ng-container formArrayName="ingredients">
+            <ng-container *ngFor="let control of ingredients.controls; index as i"
+            [formGroupName]="i">
+                <input formControlName = "ingredients">
+            </ng-container>
+        </ng-container>
+          <button type="button" mat-flat-button (click)="addIngredient()">add ingredient</button>
+          <button type="submit" mat-flat-button>search for food</button>
+    </form >
+</div>
+
+<pre>
+    {{formGroup.value| json}}
+</pre>
+
+    
