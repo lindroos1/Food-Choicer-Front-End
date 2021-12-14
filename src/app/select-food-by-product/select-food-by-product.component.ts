@@ -2,6 +2,7 @@ import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Form, FormArray, FormControl, FormGroup } from '@angular/forms';
 import { ButtonComponent } from '../button/button.component';
+import { Food } from '../models/Food';
 
 @Component({
   selector: 'app-select-food-by-product',
@@ -11,15 +12,15 @@ import { ButtonComponent } from '../button/button.component';
 export class SelectFoodByProductComponent extends ButtonComponent {
 
   public formGroup!: FormGroup;
-   clicked:boolean = false;
+  public food:Food[] = [];
 
-  //ingredients = new FormArray([]);
 
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group(
     {
-      ingredients: this.formBuilder.array([])
+      ingredients: this.formBuilder.array([
+      ])
     }
     )
   }
@@ -30,16 +31,17 @@ export class SelectFoodByProductComponent extends ButtonComponent {
     this.clicked = true;
   }
   addIngredient(){
-    this.ingredients.push(this.formBuilder.group({ingredients: ''}));
+    this.ingredients.push(this.formBuilder.control(''));
   }
   get ingredients(): FormArray{
     return this.formGroup.get("ingredients") as FormArray;
   }
   searchFood(){
-    console.log(this.formGroup.value); 
-    console.log(this.ingredients.at(0).value);
-    this.foodbyIngrServ.put(this.ingredients.at(0).value).subscribe(
-
+    console.log(this.ingredients.value);
+    this.foodbyIngrServ.put(this.ingredients.value).subscribe(
+      data=>{
+        this.food = data;
+       }
     );
   }
 

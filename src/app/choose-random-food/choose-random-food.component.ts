@@ -13,7 +13,7 @@ import { Food } from '../models/Food';
 export class ChooseRandomFoodComponent extends ButtonComponent {
 
   food!: Food;
-  clicked:boolean = false;
+ 
 
 
   //if we subscribe to the service here, we will get random food per refresh, not per click
@@ -31,7 +31,5 @@ export class ChooseRandomFoodComponent extends ButtonComponent {
     // this.router.navigate(['viewFood']);
   }
 
-  close(): void{
-    this.clicked = false;
-  }
+ 
 }

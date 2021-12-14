@@ -16,6 +16,7 @@ button parent - has the behaviour for any button
 export class ButtonComponent implements OnInit {
 
  //protected clicked:boolean = false;
+  public clicked:boolean = false;
 
 
   constructor(protected formBuilder: FormBuilder, protected router: Router,
@@ -31,4 +32,7 @@ export class ButtonComponent implements OnInit {
   }
 
 
+  close(): void{
+    this.clicked = false;
+  }
 }

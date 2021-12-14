@@ -1,8 +1,10 @@
+import { LoadingListener } from "@clr/angular";
 import { Ingredients } from "./Ingredients";
 
 
 
 export class Food{
-   public foodName:string = "";
+   public id!:number;
    public  ingredients:Ingredients[]  = [];
+   public foodName:string = "";
 }

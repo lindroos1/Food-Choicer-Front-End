@@ -15,10 +15,8 @@ export class FoodByIngredientsService {
   }
 
  
-  public put(data:any):Observable<any>{
-    console.log(data);
-      return this.htpp.post<any>(this.url, {
-        data
-      });
+  public put(ingr:any):Observable<Food[]>{
+    console.log(ingr);
+      return this.htpp.post<any>(this.url, ingr);
       }
 }

@@ -9,8 +9,8 @@
     <form  [formGroup] = "formGroup" (ngSubmit)="searchFood()">
         <ng-container formArrayName="ingredients">
             <ng-container *ngFor="let control of ingredients.controls; index as i"
-            [formGroupName]="i">
-                <input formControlName = "ingredients">
+          >
+                <input [formControlName] = "i">
             </ng-container>
         </ng-container>
           <button type="button" mat-flat-button (click)="addIngredient()">add ingredient</button>
@@ -18,8 +18,32 @@
     </form >
 </div>
 
-<pre>
-    {{formGroup.value| json}}
-</pre>
+<!--
+    if we have returned values from Spring, show the table 
+-->
+<div *ngIf="this.food.length>0 && clicked == true">
+    <table class="table">
+        <caption>
+          <h1>Food</h1>
+        </caption>
+        <thead>
+          <th>Name</th>
+          </thead>
+          <tbody>
+            <tr *ngFor=" let food of this.food;  let idx = index">
+                <td>{{food.foodName}}</td>
+            </tr>
+          </tbody>
+        
+      </table>
+      <button class="btn btn-primary" (click)="close()">Close</button>
+</div>
+
+<!--
+    <pre>
+    {{this.ingredients.value| json}}
+    </pre>
+
+-->
 
     
