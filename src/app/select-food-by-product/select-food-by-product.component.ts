@@ -11,7 +11,7 @@ import { Food } from '../models/Food';
 })
 export class SelectFoodByProductComponent extends ButtonComponent {
 
-  public formGroup!: FormGroup;
+ 
   public food:Food[] = [];
 
 

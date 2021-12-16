@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AddFoodService } from '../add-food.service';
 import { FoodByIngredientsService } from '../food-by-ingredients.service';
 import { RandomFoodService } from '../random-food.service';
 
@@ -17,18 +18,21 @@ export class ButtonComponent implements OnInit {
 
  //protected clicked:boolean = false;
   public clicked:boolean = false;
+  public formGroup!: FormGroup;
 
 
   constructor(protected formBuilder: FormBuilder, protected router: Router,
      protected randomFoodService:RandomFoodService,
-     protected foodbyIngrServ:FoodByIngredientsService) { }
+     protected foodbyIngrServ:FoodByIngredientsService,
+     protected addFoodService:AddFoodService,
+     ) { }
 
 
   ngOnInit(): void {
   }
 
   onClick(): void{
-      console.log("clicked");
+    this.clicked = true;
   }
 
 

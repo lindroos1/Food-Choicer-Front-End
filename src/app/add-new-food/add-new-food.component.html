@@ -1,9 +1,41 @@
-
 <div style="text-align: center ; width:1400px; 
     height: 70px">
-        <button type="button" mat-flat-button (click)="onClick()">add new food</button>
-    </div>
+    <button type="button" mat-flat-button (click)="onClick()">add new food</button>
+</div>
 
 
+<div *ngIf="clicked==true">
+    <form [formGroup]="formGroup" (ngSubmit)="addFood()">
+        <ng-container>
+            <label>Food name</label>
+            <input formControlName="foodName">
+        </ng-container>
+        <ng-container formArrayName="ingredients">
+            <ng-container *ngFor="let ingr of getIngredients.controls; index as i" [formGroupName]="i">
+                <label>Ingredients</label>
+                <input formControlName=ingredients>
+            </ng-container>
+            <button type="button" mat-flat-button (click)="addIngredient()">add ingredient</button>
+            <button type="submit" mat-flat-button>put food</button>
+        </ng-container>
+    </form>
+    <button class="btn btn-primary" (click)="close()">Close</button>
+</div>
+
+<div *ngIf="requestSent == true">
+    <clr-alert clrAlertType={{alertText}} [clrAlertClosable]="true">
+        <clr-alert-item>
+            <span class="alert-text">
+              {{alertText}}
+            </span>
+        </clr-alert-item>
+    </clr-alert>
     
-    
+</div>
+
+<!--
+        <pre>
+    {{this.getIngredients.value| json}}
+    {{this.FoodName | json}}
+    </pre>
+    -->
