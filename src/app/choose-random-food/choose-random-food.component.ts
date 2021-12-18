@@ -3,6 +3,7 @@ import { ButtonComponent } from '../button/button.component';
 import { Router } from '@angular/router';
 import { RandomFoodService } from '../random-food.service';
 import { Food } from '../models/Food';
+import gsap from 'gsap/all';
 
 
 @Component({
@@ -18,6 +19,18 @@ export class ChooseRandomFoodComponent extends ButtonComponent {
 
   //if we subscribe to the service here, we will get random food per refresh, not per click
   ngOnInit(): void {
+    gsap.timeline(
+      {
+        defaults:{
+          duration:5
+        }
+      }
+    ).to(".button2", {
+      x: -500,
+      y: 180,
+      scale: 2,
+      ease: "back"
+    })
   }
 
 

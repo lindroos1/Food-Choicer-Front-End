@@ -1,22 +1,23 @@
 <div style="text-align: center ; width:1400px; 
     height: 70px">
-    <button type="button" mat-flat-button (click)="onClick()">add new food</button>
+    <button type="button" id="button"  class="button" 
+    mat-flat-button (click)="onClick()">add new food</button>
 </div>
 
 
-<div *ngIf="clicked==true">
+<div style = "position:absolute; left:45px; top:400px" *ngIf="clicked==true">
     <form [formGroup]="formGroup" (ngSubmit)="addFood()">
         <ng-container>
-            <label>Food name</label>
-            <input formControlName="foodName">
+            <label class="label">Food name: </label>
+            <input class="inputField" formControlName="foodName">
         </ng-container>
         <ng-container formArrayName="ingredients">
             <ng-container *ngFor="let ingr of getIngredients.controls; index as i" [formGroupName]="i">
-                <label>Ingredients</label>
-                <input formControlName=ingredients>
+                <label class="label">Ingredients: </label>
+                <input class="inputField" formControlName=ingredients>
             </ng-container>
-            <button type="button" mat-flat-button (click)="addIngredient()">add ingredient</button>
-            <button type="submit" mat-flat-button>put food</button>
+            <button type="button" class="inline" mat-flat-button (click)="addIngredient()">add ingredient</button>
+            <button type="submit" class="inline" mat-flat-button>put food</button>
         </ng-container>
     </form>
     <button class="btn btn-primary" (click)="close()">Close</button>

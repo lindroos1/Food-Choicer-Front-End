@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Form, FormArray, FormControl, FormGroup } from '@angular/forms';
+import gsap from 'gsap/all';
 import { ButtonComponent } from '../button/button.component';
 import { Food } from '../models/Food';
 
@@ -23,6 +24,16 @@ export class SelectFoodByProductComponent extends ButtonComponent {
       ])
     }
     )
+    gsap.timeline({
+      defaults:{
+        duration:5
+      }
+    }).to(".button1", {
+      x: -500,
+      y: -40,
+      scale: 2,
+      ease: "back"
+    })
   }
 
   //redirect to new componenet where popup will accept products and send them to spring 

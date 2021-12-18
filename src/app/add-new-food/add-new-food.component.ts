@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl } from '@angular/forms';
 import { ButtonComponent } from '../button/button.component';
 import { Food } from '../models/Food';
+import gsap from "gsap";
 
 @Component({
   selector: 'app-add-new-food',
@@ -15,6 +16,7 @@ export class AddNewFoodComponent extends ButtonComponent {
   food: Food = new Food;
   requestSent:boolean = false;
   alertText:string = "success"
+ 
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group(
@@ -23,8 +25,21 @@ export class AddNewFoodComponent extends ButtonComponent {
         ingredients: this.formBuilder.array([
         ])
       }
-      )
-  }
+      );
+      gsap.timeline({
+       
+        defaults: {
+          duration: 5
+        }
+      })
+      .to(".button", {
+        x: -500,
+        y: 200,
+        scale: 2,
+        ease: "back"
+      })
+      
+      }
 
  get getIngredients():FormArray{
     return this.formGroup.get("ingredients") as FormArray;
@@ -53,6 +68,8 @@ export class AddNewFoodComponent extends ButtonComponent {
     {
       this.alertText = "error"
     }))
+
+  
   }
  
 }

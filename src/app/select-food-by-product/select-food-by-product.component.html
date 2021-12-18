@@ -1,28 +1,31 @@
 
 <div style="text-align: center ; width:1400px; 
     height: 70px">
-        <button type="button" mat-flat-button  (click)="onClick()">select food by products</button>
+        <button type="button" mat-flat-button  class="button1"
+         (click)="onClick()">select food by products</button>
     </div>
 
 
-<div *ngIf = "clicked == true">
+<div  style = "position:relative; left:45px; top:230px" *ngIf = "clicked == true">
     <form  [formGroup] = "formGroup" (ngSubmit)="searchFood()">
         <ng-container formArrayName="ingredients">
-            <ng-container *ngFor="let control of ingredients.controls; index as i"
-          >
-                <input [formControlName] = "i">
+            <ng-container *ngFor="let control of ingredients.controls; index as i">
+                <label class="label">Ingredient: </label>
+                <input class="inputField" [formControlName] = "i">
             </ng-container>
         </ng-container>
-          <button type="button" mat-flat-button (click)="addIngredient()">add ingredient</button>
-          <button type="submit" mat-flat-button>search for food</button>
+          <button type="button"  class="inline" mat-flat-button (click)="addIngredient()">add ingredient</button>
+          <button type="submit"  class="inline" mat-flat-button>search for food</button>
     </form >
-    <button class="btn btn-primary" (click)="close()">Close</button>
+    <div>
+        <button class="btn btn-primary" (click)="close()">Close</button>
+    </div>
 </div>
 
 <!--
     if we have returned values from Spring, show the table 
 -->
-<div *ngIf="this.food.length>0 && clicked == true">
+<div  style="width: 60%; position:absolute; top: 50px; right:15px;" *ngIf="this.food.length>0 && clicked == true">
     <table class="table">
         <caption>
           <h1>Food</h1>
