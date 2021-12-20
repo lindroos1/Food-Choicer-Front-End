@@ -23,7 +23,7 @@
     <button class="btn btn-primary" (click)="close()">Close</button>
 </div>
 
-<div *ngIf="requestSent == true">
+<div *ngIf="requestSent == true" style="position: absolute;top: 60px;">
     <clr-alert clrAlertType={{alertText}} [clrAlertClosable]="true">
         <clr-alert-item>
             <span class="alert-text">
@@ -31,7 +31,6 @@
             </span>
         </clr-alert-item>
     </clr-alert>
-    
 </div>
 
 <!--

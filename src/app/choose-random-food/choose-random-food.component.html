@@ -6,24 +6,8 @@
     </div>
 
 
-<div  style="width: 60%; position:absolute; right:15px;" *ngIf = "clicked == true">
-    <table class="table">
-        <caption>
-          <h1>Food</h1>
-        </caption>
-        <thead>
-          <th class="name">Products</th>
-          <th class="name">Name</th>
-          </thead>
-          <tbody class="body">
-            <tr *ngFor=" let ingr of food.ingredients;  let idx = index">
-              <td >{{ingr.ingredients}}</td>
-              <td  *ngIf="idx == 0">{{food.foodName}}</td>
-            </tr>
-          </tbody>
-        
-      </table>
-      
-      <button class="btn btn-primary" (click)="close()">Close</button>
-        
+<div class="div" *ngIf = "clicked == true">
+    <app-table [food] = "food" [clicked]= "clicked"></app-table>
+    <button class="btn btn-primary" style="    position:absolute; right:15px;top:430px;
+    "(click)="close()">Close</button>
 </div>

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AddFoodService } from '../add-food.service';
 import { FoodByIngredientsService } from '../food-by-ingredients.service';
 import { RandomFoodService } from '../random-food.service';
+import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-button',

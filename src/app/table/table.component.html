@@ -1,0 +1,22 @@
+<div  style="width: 60%; position:absolute; right:15px; top: 40px;">
+    <table class="table">
+        <caption>
+          <h1>Food</h1>
+        </caption>
+        <thead>
+          <th class="name">Name</th>
+          <th class="name">Products</th>
+          </thead>
+          <tbody>
+            <tr *ngFor=" let food of this.food;  let idx = index">
+                <td>{{food.foodName}}</td>
+                <div *ngFor="let ingr of this.food.ingredients">
+                    <td>{{ingr.ingredients}}</td>
+                </div>
+            </tr>
+          </tbody>
+      </table>
+      
+  
+        
+</div>

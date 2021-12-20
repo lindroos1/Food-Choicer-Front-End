@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Food } from './models/Food';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+/*
+  public food:Food[] = [];
+  public clicked:boolean = false;
  
+  close(): void{
+    this.clicked = false;
+  }
+  */
 }

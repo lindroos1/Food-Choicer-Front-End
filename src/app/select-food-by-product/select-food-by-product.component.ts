@@ -36,11 +36,7 @@ export class SelectFoodByProductComponent extends ButtonComponent {
     })
   }
 
-  //redirect to new componenet where popup will accept products and send them to spring 
-  onClick(){
-    //this.router.navigate(['form']);
-    this.clicked = true;
-  }
+
   addIngredient(){
     this.ingredients.push(this.formBuilder.control(''));
   }
@@ -54,6 +50,11 @@ export class SelectFoodByProductComponent extends ButtonComponent {
         this.food = data;
        }
     );
+  }
+
+  clear(){
+    this.food = [];
+    this.ingredients.clear();
   }
 
 }

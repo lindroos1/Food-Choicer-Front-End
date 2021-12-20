@@ -16,6 +16,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 import { ClarityModule } from '@clr/angular';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TableComponent } from './table/table.component';
 
 
 
@@ -27,6 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ChooseRandomFoodComponent,
     SelectFoodByProductComponent,
     AddNewFoodComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
